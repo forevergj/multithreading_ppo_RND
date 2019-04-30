@@ -151,8 +151,8 @@ class RND(nn.Module):
     def forward(self, input):
         fix = self.fixnet(input)
         train = self.trainnet(input)
-        loss = torch.mean(torch.abs(fix-train))
-        # loss = self.loss(fix,train)
+#         loss = torch.mean(torch.abs(fix-train))
+        loss = self.loss(fix,train)
         return loss
 
 
